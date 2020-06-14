@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array of String</title>
+</head>
+<body>
+
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+
+    <script>
+        var strArr = ['a','2a','2b','b']
+        var result = []
+
+        strArr.forEach(function(item){  //The forEach() method calls a function (a callback function) once for each array element.
+            if(hasNumber(item)){        //and that call back funtion can take up to 3 argus [item, index, array]. 
+                result.push(item)       //As per need I'm using only one argu - item
+            }
+        })
+
+
+        document.getElementById('demo1').innerHTML = '<b>Original array : </b>' + strArr.join(' , ') //join function concat the elements of 
+        document.getElementById('demo2').innerHTML = '<b>New array : </b>' + result.join(' , ')      // the items with given seperater.
+
+        function hasNumber(str) {   
+            return /\d/.test(str);  //this 'regex' statement checking, if string contains number. 
+        }
+    </script>
+</body>
+</html>
